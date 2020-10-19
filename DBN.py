@@ -49,6 +49,8 @@ class DBN(nn.Module):
         v = input_data
         for i in range(len(self.rbm_layers)):
             v = v.view((v.shape[0], -1)).type(torch.FloatTensor) # Flatten the input data
+            if self.use_gpu:
+                v = v.cuda()
             p_v, v = self.rbm_layers[i].to_hidden(v)
 
         return p_v, v
@@ -70,7 +72,7 @@ class DBN(nn.Module):
             p_v, v = self.rbm_layers[i].to_visible(v)
         return p_v, v
 
-    def train_stat(self, train_data, train_labels, num_epoch=20, batch_size=100):
+    def train_stat(self, train_data, num_epoch=20, batch_size=100):
 
         tmp = train_data
 
@@ -78,19 +80,13 @@ class DBN(nn.Module):
             print("-"*20)
             print('Training the {} rbm layer'.format(i+1))
 
-            tensor_x = tmp.type(torch.FloatTensor)
-            tensor_y = train_labels.type(torch.FloatTensor)
-
-            _dataset = torch.utils.data.TensorDataset(tensor_x, tensor_y)
-            _dataloader = torch.utils.data.DataLoader(_dataset, batch_size=batch_size, drop_last=True)
-
-            self.rbm_layers[i].train(_dataloader, num_epoch, batch_size)
+            self.rbm_layers[i].train(tmp, num_epoch, batch_size)
             v = tmp.view((tmp.shape[0], -1)).type(torch.FloatTensor)
             if self.use_gpu:
                 v = v.cuda()
             p_v, v = self.rbm_layers[i].forward(v)
             tmp = v
-        return p_v
+        return
 
     def train_ith(self, train_data, train_labels, num_epoch, batch_size, ith_layer):
 

@@ -120,28 +120,29 @@ class RBM(nn.Module):
 
         return self.contrastive_divergence(input_data, True, n_gibbs_sampling_steps, lr)
 
-    def train(self, train_dataloader, num_epochs=20, batch_size=16):
+    def train(self, input_data, num_epochs=20, batch_size=16):
         self.batch_size = batch_size
-        if (isinstance(train_dataloader, torch.utils.data.DataLoader)):
-            train_loader = train_dataloader
-        else:
-            train_loader = torch.utils.data.DataLoader(train_dataloader, batch_size=batch_size)
 
-        for epoch in range(1, num_epochs+1):
-            epoch_error = 0.0
+        if (isinstance(input_data, torch.utils.data.DataLoader)):
+            train_loader = input_data
+        else:
+            train_loader = torch.utils.data.DataLoader(input_data, batch_size=batch_size)
+
+        for epoch in range(1, num_epochs + 1):
             n_batches = int(len(train_loader))
+            # print(n_batches)
 
             cost_ = torch.FloatTensor(n_batches, 1)
             grad_ = torch.FloatTensor(n_batches, 1)
 
-            for i, (batch, _) in tqdm(enumerate(train_loader)):
+            for i, batch in tqdm(enumerate(train_loader), ascii=True):
 
                 batch = batch.view(len(batch), self.visible_unit)
 
                 if (self.use_gpu):
                     batch = batch.cuda()
-                cost_[i-1], grad_[i-1] = self.step(batch, epoch)
-            print("Epoch:{} ,avg_cost = {} ,std_cost = {} ,avg_grad = {} ,std_grad = {}".format(epoch,
+                cost_[i - 1], grad_[i - 1] = self.step(batch, epoch)
+        print("Epoch:{} finished, avg_cost = {}, std_cost = {}, avg_grad = {}, std_grad = {}".format(num_epochs,
                                                                                                 torch.mean(cost_),
                                                                                                 torch.std(cost_),
                                                                                                 torch.mean(grad_),
