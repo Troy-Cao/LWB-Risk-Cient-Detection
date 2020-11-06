@@ -1,0 +1,22 @@
+Collecting bokeh
+  Downloading bokeh-2.2.2.tar.gz (8.8 MB)
+Requirement already satisfied: PyYAML>=3.10 in /Users/chenqinzhang/opt/anaconda3/envs/sem2_2020/lib/python3.8/site-packages (from bokeh) (5.3.1)
+Requirement already satisfied: python-dateutil>=2.1 in /Users/chenqinzhang/opt/anaconda3/envs/sem2_2020/lib/python3.8/site-packages (from bokeh) (2.8.1)
+Requirement already satisfied: Jinja2>=2.7 in /Users/chenqinzhang/opt/anaconda3/envs/sem2_2020/lib/python3.8/site-packages (from bokeh) (2.11.2)
+Requirement already satisfied: numpy>=1.11.3 in /Users/chenqinzhang/opt/anaconda3/envs/sem2_2020/lib/python3.8/site-packages (from bokeh) (1.19.2)
+Requirement already satisfied: pillow>=7.1.0 in /Users/chenqinzhang/opt/anaconda3/envs/sem2_2020/lib/python3.8/site-packages (from bokeh) (7.2.0)
+Requirement already satisfied: packaging>=16.8 in /Users/chenqinzhang/opt/anaconda3/envs/sem2_2020/lib/python3.8/site-packages (from bokeh) (20.4)
+Requirement already satisfied: tornado>=5.1 in /Users/chenqinzhang/opt/anaconda3/envs/sem2_2020/lib/python3.8/site-packages (from bokeh) (6.0.4)
+Collecting typing_extensions>=3.7.4
+  Downloading typing_extensions-3.7.4.3-py3-none-any.whl (22 kB)
+Requirement already satisfied: six>=1.5 in /Users/chenqinzhang/opt/anaconda3/envs/sem2_2020/lib/python3.8/site-packages (from python-dateutil>=2.1->bokeh) (1.15.0)
+Requirement already satisfied: MarkupSafe>=0.23 in /Users/chenqinzhang/opt/anaconda3/envs/sem2_2020/lib/python3.8/site-packages (from Jinja2>=2.7->bokeh) (1.1.1)
+Requirement already satisfied: pyparsing>=2.0.2 in /Users/chenqinzhang/opt/anaconda3/envs/sem2_2020/lib/python3.8/site-packages (from packaging>=16.8->bokeh) (2.4.7)
+Building wheels for collected packages: bokeh
+  Building wheel for bokeh (setup.py): started
+  Building wheel for bokeh (setup.py): finished with status 'done'
+  Created wheel for bokeh: filename=bokeh-2.2.2-py3-none-any.whl size=9295654 sha256=6a19183478b20c5b8f696f69e6b535c6ea0346a642ad2bcd08fbb00d9bc078eb
+  Stored in directory: /Users/chenqinzhang/Library/Caches/pip/wheels/6d/9f/59/95f17da00a0d69835aea2fa7feb4a65ff05cd117f4b7bd12e0
+Successfully built bokeh
+Installing collected packages: typing-extensions, bokeh
+Successfully installed bokeh-2.2.2 typing-extensions-3.7.4.3
