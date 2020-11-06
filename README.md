@@ -1,6 +1,8 @@
-# Life Without Barrier Client OutcomesProject
+# Life Without Barrier Client Outcomes Project
 
-Folder structure
+The final data analysis and models put in the structure as below, Other folders and files are draft codes. 
+
+Folder structure:
 ```
 ├── dataPreprocessing                   # The final data preprocessing, include split train and test set
 │   └── dataPreprocessing.ipynb
