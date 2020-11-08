@@ -10,8 +10,13 @@ Folder structure:
 │   └── DataAnalysis_chenqin.ipynb
 │   └── DataAnalysis_yun.ipynb
 ├── Models                              # Final models
+│   └── DBN+AnomalyDetection.ipynb
+│   └── DBN.py
+│   └── DBN_classifier.ipynb
+│   └── RBM.py
+│   └── Deep Method.ipynb
 │   └── LSTM_Anomaly_Detection.ipynb
-│   └── lightGBM.ipynb
-│   └──
+└── └── lightGBM.ipynb
+
 
 ```
