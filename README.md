@@ -7,7 +7,10 @@ Folder structure:
 ├── dataPreprocessing                   # The final data preprocessing, include split train and test set
 │   └── dataPreprocessing.ipynb
 ├── Data_Analysis_and_Visualization     # Initial exploration for data, include data analysis and visualization
+│   ├── DataAnalysis_DiCao.ipynb
 │   ├── DataAnalysis_chenqin.ipynb
+│   ├── DataAnalysis_longxuan.ipynb
+│   ├── DataAnalysis_miaoqin.ipynb
 │   └── DataAnalysis_yun.ipynb
 ├── Models                              # Final models
 │   ├── DBN+AnomalyDetection.ipynb
