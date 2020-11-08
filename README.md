@@ -7,15 +7,15 @@ Folder structure:
 ├── dataPreprocessing                   # The final data preprocessing, include split train and test set
 │   └── dataPreprocessing.ipynb
 ├── Data_Analysis_and_Visualization     # Initial exploration for data, include data analysis and visualization
-│   └── DataAnalysis_chenqin.ipynb
+│   ├── DataAnalysis_chenqin.ipynb
 │   └── DataAnalysis_yun.ipynb
 ├── Models                              # Final models
-│   └── DBN+AnomalyDetection.ipynb
-│   └── DBN.py
-│   └── DBN_classifier.ipynb
-│   └── RBM.py
-│   └── Deep Method.ipynb
-│   └── LSTM_Anomaly_Detection.ipynb
+│   ├── DBN+AnomalyDetection.ipynb
+│   ├── DBN.py
+│   ├── DBN_classifier.ipynb
+│   ├── RBM.py
+│   ├── Deep Method.ipynb
+│   ├── LSTM_Anomaly_Detection.ipynb
 └── └── lightGBM.ipynb
 
 
